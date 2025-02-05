@@ -1,0 +1,225 @@
+/* Container Styles with improved visual hierarchy */
+.faq-container {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  border-radius: 1rem;
+}
+
+/* Enhanced Header Styles with animation */
+.faq-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.faq-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  text-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.025em;
+}
+
+.faq-subtitle {
+  color: #4b5563;
+  font-size: 1.125rem;
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Enhanced FAQ Item Styles with depth */
+.faq-item {
+  margin-bottom: 1.5rem;
+  border: 5px solid rgba(229, 231, 235, 0.6);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.1);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Enhanced Question Button Styles */
+.faq-question-button {
+  width: 100%;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-question-button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  transition: width 0.3s ease;
+}
+
+.faq-question-button:hover::after {
+  width: 100%;
+}
+
+.faq-question-button:hover {
+  background-color: #f8fafc;
+}
+
+/* Enhanced Icon Styles */
+.faq-icon {
+  margin-right: 1rem;
+  color: #2563eb;
+  transition: transform 0.3s ease;
+  padding: 0.5rem;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 0.5rem;
+}
+
+.faq-question-button:hover .faq-icon {
+  transform: scale(1.1);
+}
+
+/* Enhanced Question Text Styles */
+.faq-question-text {
+  font-size: 1.2rem;
+  flex-grow: 1;
+  text-align: left;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
+}
+
+.faq-question-button:hover .faq-question-text {
+  color: #2563eb;
+}
+
+/* Enhanced Chevron Styles */
+.faq-chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.faq-question-button:hover .faq-chevron {
+  color: #2563eb;
+}
+
+/* Enhanced Answer Styles */
+.faq-answer {
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.faq-answer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2563eb, #4f46e5);
+  opacity: 0.8;
+}
+
+.faq-answer-text {
+  color: #4b5563;
+  line-height: 1.75;
+  font-size: 1.0625rem;
+}
+
+/* Enhanced Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Animation Classes */
+.faq-item-enter {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+}
+
+.faq-item-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-enter {
+  height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.faq-answer-enter-active {
+  height: auto;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced Responsive Adjustments */
+@media (max-width: 640px) {
+  .faq-container {
+    padding: 1.25rem;
+  }
+  
+  .faq-title {
+    font-size: 1.75rem;
+  }
+  
+  .faq-subtitle {
+    font-size: 1rem;
+  }
+  
+  .faq-question-button {
+    padding: 1rem;
+  }
+  
+  .faq-answer {
+    padding: 1.25rem;
+  }
+}
+
+/* Print styles for better documentation */
+@media print {
+  .faq-container {
+    background: none;
+    padding: 0;
+  }
+  
+  .faq-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #000;
+  }
+  
+  .faq-answer {
+    background: none;
+  }
+}

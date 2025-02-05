@@ -1,0 +1,129 @@
+/* Improved Car Details CSS */
+.car-details-container {
+    font-family: var(--main-font);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    margin: 40px 0;
+    border: 1px solid #e0e0e0;
+    gap: 20px;
+}
+
+.car-details-container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.car-image {
+    position: relative;
+    width: 35rem; /* Optimized width */
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.car-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.car-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(90%);
+}
+
+.car-image .car-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: rgba(0, 102, 204, 0.9);
+    padding: 15px 30px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.car-image:hover .car-link {
+    opacity: 1;
+}
+
+.car-image .car-link:hover {
+    background-color: rgba(0, 102, 204, 1);
+    color: #fff;
+}
+
+.car-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.car-info h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.car-info p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.car-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.car-info ul li {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.car-info ul li::before {
+    content: '\2022';
+    color: #007acc;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+@media (max-width: 1024px) {
+    .car-details-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .car-info {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .car-image {
+        width: 100%;
+        max-width: 400px;
+    }
+    .car-info h3 {
+        font-size: 1.8rem;
+    }
+    .car-info ul li {
+        font-size: 1rem;
+    }
+}
