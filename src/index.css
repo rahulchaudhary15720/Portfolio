@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+
+:root{
+    --main-color:#373c4b;
+    --black-color:#dde8ef;
+    --white-color:#fff;
+    --btn-color:#d92836;
+    --btn2-color:#d6bc60;
+    --second-color:#dde8ef;
+
+    --main-font:" 'Oswald', sans-serif";
+    --second-font:"'Montserrat', sans-serif";
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--main-font);
+
+}

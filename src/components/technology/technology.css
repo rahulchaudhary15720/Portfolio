@@ -1,0 +1,104 @@
+/* General Styles */
+#Skills {
+    padding: 2.5rem;
+    text-align: center;
+    background-color: var(--lt-color-background-light);
+  }
+  
+  #Skills h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--lt-color-text-dark);
+  }
+  
+  #Skills p {
+    font-size: 1.1rem;
+    /* color: ; */
+    font-weight: bold;
+  }
+  
+  /* Grid Layout */
+  .skills-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 800px;
+    margin: auto;
+    padding-top: 2.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Skill Card */
+  .skill-card {
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px; /* Rounded corners */
+    background-color: #ffffff; /* Light background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem; /* Padding for better spacing */
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  .skill-card a{
+    text-decoration: none;
+    color: var(--btn-color);
+  }
+  .skill-icon {
+    width: 8rem; /* Adjusted for better fit */
+    height: 8rem;
+    border-radius: 50%; /* Circular icon container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lt-color-white);
+  }
+  /* Skill Name */
+.skill-name {
+  font-size: 1.2rem; /* Slightly smaller font size */
+  font-weight: bold;
+}
+
+  /* Skill Description */
+.skill-description {
+  font-size: 0.9rem; /* Smaller description text */
+  color: #666; /* Gray color for description */
+}
+
+/* Skill Level Indicator */
+.skill-level {
+  font-size: 0.8rem;
+  color: #61CE70; /* Green color for skill level */
+}
+  
+  .skill-icon img {
+    width: 6rem;
+    height: 6rem;
+    padding: 1rem;
+    animation: skillAnimation 1s ease-in-out infinite alternate;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes skillAnimation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+  

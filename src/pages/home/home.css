@@ -1,0 +1,200 @@
+:root {
+    --qb-color-dummy: #fff;
+    --lt-color-gray-100: #f8f9fc;
+    --lt-color-gray-200: #f1f3f9;
+    --lt-color-gray-300: #dee3ed;
+    --lt-color-gray-400: #c2c9d6;
+    --lt-color-gray-500: #8f96a3;
+    --lt-color-gray-600: #5e636e;
+    --lt-color-gray-700: #2f3237;
+    --lt-color-gray-800: #1d1e20;
+    --lt-color-gray-900: #111213;
+    --main-color:#0B132B;
+    --primary-color:#8B3DFF;
+    --secondary-color:#4CC9F0;
+    --black-color:#000f;
+    --white-color:#fff;
+    --btn-color:#d92836;
+    --btn2-color:#00F260;
+  
+    --lt-shadowDefault: 0 2px 6px -1px rgba(0, 0, 0, 0.16), 0 1px 4px -1px rgba(0, 0, 0, 0.04);
+    --lt-shadowActive: 0 0 8px -2px rgba(0, 0, 0, 0.1), 0 6px 20px -3px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.full-width-layout {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.full-width-layout .hero-container {
+    display: flex;
+    width: 100%;
+    font-family:var(--second-font);
+    color: var(--main-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.full-width-layout .intro-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+    padding: 2.5vw;
+    background-color: var(--lt-color-gray-100);
+}
+
+.full-width-layout .intro-content {
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+}
+
+.full-width-layout .intro-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.full-width-layout .intro-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: var(--lt-color-gray-600);
+}
+
+.full-width-layout .cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.full-width-layout .btn-primary a{
+    text-decoration: none;
+    color: var(--white-color);
+}
+.full-width-layout .btn-secondary a{
+    text-decoration: none;
+    color: var(--btn-color);
+}
+
+.full-width-layout .btn-primary,
+.full-width-layout .btn-secondary {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.full-width-layout .btn-primary {
+    /* text-decoration: none; */
+    background-color: var(--btn-color);
+    border: 2px solid var(--btn-color);
+    /* color: var(--white-color); */
+}
+
+.full-width-layout .btn-secondary {
+    /* text-decoration: none; */
+    background-color: var(--white-color);
+    border: 2px solid var(--btn-color);
+    /* color: var(--btn-color); */
+}
+
+
+.full-width-layout .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 2.5vw;
+}
+
+.full-width-layout .huge-title {
+    width: 100%;
+    font-size: clamp(3rem, 7vw, 10rem);
+    text-align: center;
+}
+
+.full-width-layout .huge-title .row {
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.full-width-layout .huge-title .line {
+    display: block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.full-width-layout .huge-title .letter {
+    position: relative;
+    display: inline-block;
+}
+
+.full-width-layout .tags {
+    width: 100%;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.full-width-layout .marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.full-width-layout .marquee {
+    display: flex;
+    width: min-content; /* Allows content to extend beyond the container */
+    animation: marquee-scroll 12s linear infinite;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.full-width-layout .marquee-scroll {
+    display: flex;
+    gap: 1rem;
+}
+
+.full-width-layout .tag {
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    color: var(--main-color);
+    white-space: nowrap;
+}
+
+
+@media (max-width: 768px) {
+    .full-width-layout .hero-container {
+        flex-direction: column;
+    }
+
+    .full-width-layout .huge-title {
+        font-size: clamp(2rem, 10vw, 5rem);
+    }
+
+    .full-width-layout .huge-title .row {
+        height: auto;
+    }
+
+    .full-width-layout .tag {
+        margin: 0 0.5rem;
+    }
+}
