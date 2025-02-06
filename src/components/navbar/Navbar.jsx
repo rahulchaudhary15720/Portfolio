@@ -1,41 +1,59 @@
-// import React from 'react';
-import React, { useState } from "react"
-import logo from '../../assets/Images/logo.png'
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import {  FaBars, FaTimes } from "react-icons/fa"
-// import Admin from '../../assets/Images/Photo.img'
-import "./Navbar.css"
+import React, { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Admin from "../../assets/Images/logo.png"; // Adjust the path if necessary
+import "./navbar.css";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   const menuVariants = {
     open: { opacity: 1, x: 0 },
     closed: { opacity: 0, x: "-100%" },
-  }
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-content">
           <div className="navbar-logo">
-            <Link to="/" className="logo-link">
-              <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.9 }}>
-              <img src={logo} alt="icon" />
+            <NavLink to="/" className="logo-link">
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <img src={Admin} alt="User" />
               </motion.div>
-            </Link>
+            </NavLink>
           </div>
           <div className="navbar-links-desktop">
             <div className="navbar-links">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/experience">Experience</NavLink>
-              <NavLink to="/projects">Projects</NavLink>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink
+                to="/"
+                className="nav-link" // Always apply 'nav-link'
+              >
+                Home
+              </NavLink>
+              <NavLink
+                to="/experience"
+                className="nav-link" // Always apply 'nav-link'
+              >
+                Experience
+              </NavLink>
+              <NavLink
+                to="/projects"
+                className="nav-link" // Always apply 'nav-link'
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className="nav-link" // Always apply 'nav-link'
+              >
+                Contact
+              </NavLink>
             </div>
           </div>
           <div className="navbar-menu-button">
@@ -47,7 +65,7 @@ const Navbar = () => {
       </div>
 
       <motion.div
-        className="navbar-mobile"
+        className={`navbar-mobile ${isOpen ? "open" : ""}`} // Apply 'open' class conditionally
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={menuVariants}
@@ -69,16 +87,8 @@ const Navbar = () => {
         </div>
       </motion.div>
     </nav>
-  )
-}
-
-const NavLink = ({ to, children }) => (
-  <Link to={to} className="nav-link">
-    <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-      {children}
-    </motion.div>
-  </Link>
-)
+  );
+};
 
 const MobileNavLink = ({ to, onClick, children }) => (
   <Link to={to} onClick={onClick} className="nav-link-mobile">
@@ -86,7 +96,6 @@ const MobileNavLink = ({ to, onClick, children }) => (
       {children}
     </motion.div>
   </Link>
-)
+);
 
-export default Navbar
-
+export default Navbar;
