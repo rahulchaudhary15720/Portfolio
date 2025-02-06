@@ -35,7 +35,7 @@ const Footer = () => {
               <GithubIcon size={24} />
             </a>
             <a href="https://www.linkedin.com/in/rahul-choudhary-5b0152260/" target="_blank" rel="noopener noreferrer" className="social-link">
-              <LinkedinIcon size={24} />
+            <LinkedinIcon size={24} />
             </a>
             <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
               <TwitterIcon size={24} />
