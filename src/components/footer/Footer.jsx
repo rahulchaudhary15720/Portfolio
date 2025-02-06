@@ -31,10 +31,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Let's Connect</h3>
           <div className="social-links">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://github.com/rahulchaudhary15720" target="_blank" rel="noopener noreferrer" className="social-link">
               <GithubIcon size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.linkedin.com/in/rahul-choudhary-5b0152260/" target="_blank" rel="noopener noreferrer" className="social-link">
               <LinkedinIcon size={24} />
             </a>
             <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">

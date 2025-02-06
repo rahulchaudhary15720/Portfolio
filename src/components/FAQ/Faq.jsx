@@ -3,6 +3,8 @@ import  { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Briefcase, Code, Rocket, MessageCircle, GraduationCap, Clock } from 'lucide-react';
 import './faq.css';
+import React from 'react';
+
 
 const Faq = () => {
   // FAQ data with questions, answers, and corresponding icons

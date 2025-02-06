@@ -1,8 +1,10 @@
-import { useState } from "react"
+// import React from 'react';
+import React, { useState } from "react"
+import logo from '../../assets/Images/logo.png'
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import {  FaBars, FaTimes } from "react-icons/fa"
-import {Admin} from '../../assets/Images/photo.jpg'
+// import Admin from '../../assets/Images/Photo.img'
 import "./Navbar.css"
 
 const Navbar = () => {
@@ -23,8 +25,8 @@ const Navbar = () => {
         <div className="navbar-content">
           <div className="navbar-logo">
             <Link to="/" className="logo-link">
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <img src={Admin} alt="User" />
+              <motion.div whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.9 }}>
+              <img src={logo} alt="icon" />
               </motion.div>
             </Link>
           </div>
