@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, Linkedin, Github, ExternalLink } from 'lucide-react';
-import './Contact.css';
+import './contact.css';
 
 const Contact = () => {
   // Contact information object for easy maintenance
