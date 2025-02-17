@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2, Sun, Moon } from 'lucide-react';
 import img from '../../assets/Images/logo.png';
 import './navbar.css';
+"use client";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
