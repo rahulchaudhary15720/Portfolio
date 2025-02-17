@@ -7,7 +7,7 @@ import img5 from '../../assets/svg/mongoDB.svg';
 import img6 from '../../assets/svg/react.svg';
 import img7 from '../../assets/svg/tailwind.svg';
 import img8 from '../../assets/svg/SQL.svg';
-import './Technology.css';
+import './technology.css';
 
 const Technology = () => {
     const skills = [
