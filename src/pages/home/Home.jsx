@@ -43,7 +43,8 @@ const Home = () => {
                 <h3>A passionate freelance creative developer and designer 
                 dedicated to crafting innovative digital experiences. 
                 With a blend of technical skills and creative vision, 
-                I transform ideas into compelling visual stories.</h3> 
+                I transform ideas into compelling visual stories.
+                </h3> 
               </motion.p>
               <motion.div 
                 className="cta-buttons"

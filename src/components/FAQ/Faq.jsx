@@ -19,7 +19,7 @@ const Faq = () => {
       id: 2,
       icon: <Code />,
       question: "What technologies are you most experienced with?",
-      answer: "My core tech stack includes React, TypeScript, Node.js, and PostgreSQL. I'm proficient in modern frontend technologies like Next.js, Tailwind CSS, and Framer Motion for animations. On the backend, I work with Express.js, GraphQL, and various AWS services. I also have experience with Docker, CI/CD pipelines, and automated testing using Jest and Cypress."
+      answer: "My core tech stack includes React, Node.js,Express.js. I'm proficient in modern frontend technologies like Next.js, Tailwind CSS, and Framer Motion for animations. On the backend, I work with Express.js, GraphQL, and various AWS services."
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Faq = () => {
       id: 5,
       icon: <GraduationCap />,
       question: "What is your educational background?",
-      answer: "I hold a Bachelor's degree in Computer Science with a minor in UI/UX Design. I'm constantly learning and have completed several professional certifications, including AWS Solutions Architect and Google Cloud Professional Developer. I regularly attend tech conferences and contribute to open-source projects to stay current with industry trends."
+      answer: "I hold a Bachelor's degree in Computer Science with a minor in UI/UX Design. I'm constantly learning and have completed several professional certifications. I regularly attend tech conferences and contribute to open-source projects to stay current with industry trends."
     },
     {
       id: 6,

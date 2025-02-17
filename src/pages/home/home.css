@@ -1,53 +1,79 @@
 :root {
-    --qb-color-dummy: #fff;
-    --lt-color-gray-100: #f8f9fc;
-    --lt-color-gray-200: #f1f3f9;
-    --lt-color-gray-300: #dee3ed;
-    --lt-color-gray-400: #c2c9d6;
-    --lt-color-gray-500: #8f96a3;
-    --lt-color-gray-600: #5e636e;
-    --lt-color-gray-700: #2f3237;
-    --lt-color-gray-800: #1d1e20;
-    --lt-color-gray-900: #111213;
-    --main-color:#0B132B;
-    --primary-color:#8B3DFF;
-    --secondary-color:#4CC9F0;
-    --black-color:#000f;
-    --white-color:#fff;
-    --btn-color:#d92836;
-    --btn2-color:#00F260;
-  
-    --lt-shadowDefault: 0 2px 6px -1px rgba(0, 0, 0, 0.16), 0 1px 4px -1px rgba(0, 0, 0, 0.04);
-    --lt-shadowActive: 0 0 8px -2px rgba(0, 0, 0, 0.1), 0 6px 20px -3px rgba(0, 0, 0, 0.2);
+    /* Color Palette (Light Theme) */
+    --qb-color-dummy: #fff;  /*  Unclear Usage */
+    --lt-color-gray-100: #f8f9fc; /* Very Light Gray (Backgrounds) */
+    --lt-color-gray-200: #f1f3f9; /* Light Gray (Subtle Backgrounds/Dividers) */
+    --lt-color-gray-300: #dee3ed; /* Medium-Light Gray (Borders, UI Elements) */
+    --lt-color-gray-400: #c2c9d6; /* Medium Gray (Disabled States, Placeholder Text) */
+    --lt-color-gray-500: #8f96a3; /* Medium-Dark Gray (Regular Text) */
+    --lt-color-gray-600: #5e636e; /* Dark Gray (Secondary Text, Labels) */
+    --lt-color-gray-700: #2f3237; /* Very Dark Gray (Strong Text, Icons) */
+    --lt-color-gray-800: #1d1e20; /* Even Darker Gray (Rarely Used) */
+    --lt-color-gray-900: #111213; /* Almost Black (Strong Accents) */
+
+    --main-color: #0B132B;      /* Primary Text Color (Headings, Important Elements) */
+    --primary-color: #8B3DFF;   /* Primary Brand Color (Accents, Interactive Elements) */
+    --secondary-color: #4CC9F0; /* Secondary Brand Color (Highlights, Complementary Elements) */
+    --black-color: rgba(0, 0, 0, 0.06); /* Very subtle shadow */
+    --white-color: #fff;        /* White (Backgrounds, Light Text) */
+    --btn-color: #d92836;       /* Primary Button Color (Call-to-Action) */
+    --btn2-color: #00F260;      /* Secondary Button Color (Alternative Actions) */
+
+    /* Shadows */
+    --lt-shadowDefault: 0 2px 6px -1px rgba(0, 0, 0, 0.16), 0 1px 4px -1px rgba(0, 0, 0, 0.04); /* Subtle Shadow */
+    --lt-shadowActive: 0 0 8px -2px rgba(0, 0, 0, 0.1), 0 6px 20px -3px rgba(0, 0, 0, 0.2); /* Stronger Shadow on Hover/Focus */
+
+    /* Font sizes (using rem) - These can be adjusted for scaling */
+    --font-size-small: 0.875rem;   /* 14px equivalent */
+    --font-size-normal: 1rem;      /* 16px equivalent */
+    --font-size-large: 1.25rem;   /* 20px equivalent */
+    --font-size-h2: 2rem;        /* 32px equivalent */
+
+    /* Spacing (using rem) -  Makes adjustments easier */
+    --spacing-small: 0.5rem;    /* 8px equivalent */
+    --spacing-normal: 1rem;     /* 16px equivalent */
+    --spacing-large: 2.5rem;    /* 24px equivalent */
+
+    /* Glassmorphism base - You can adjust these for more/less blur */
+    --glass-bg: rgba(255, 255, 255, 0.2); /* Light theme base */
+    --glass-backdrop: blur(5px);
+    --glass-webkit-backdrop: blur(5px);
 }
 
 
 
+/* General Layout */
 .full-width-layout {
     width: 100%;
     max-width: 100%;
+    min-height: 100vh; /* Set minimum height to full viewport height */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden; /* Prevent potential scrollbar issues */
 }
 
+/* Hero Container */
 .full-width-layout .hero-container {
     display: flex;
     width: 100%;
-    font-family:var(--second-font);
+    font-family: var(--second-font);  
     color: var(--main-color);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    flex-direction: row; /* Ensure it's a row by default */
+    min-height: calc(100vh - 4rem); /* Adjust for navbar height if fixed */
 }
 
+/* Intro Section */
 .full-width-layout .intro-section {
-    flex: 1;
+    flex: 1; /* Takes up available space */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    min-height: 100vh; /* Adjust as needed */
     width: 100%;
-    padding: 2.5vw;
+    padding: var(--spacing-large); /* Use consistent spacing */
     background-color: var(--lt-color-gray-100);
 }
 
@@ -55,77 +81,76 @@
     width: 100%;
     max-width: 500px;
     text-align: left;
+    
 }
 
 .full-width-layout .intro-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--spacing-normal);
+    
 }
 
 .full-width-layout .intro-content p {
-    font-size: 1rem;
+    font-size: var(--font-size-normal);
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-large);
     color: var(--lt-color-gray-600);
+    /* font-family: var(--main-font); */
 }
 
+/* CTA Buttons */
 .full-width-layout .cta-buttons {
     display: flex;
-    gap: 1rem;
-}
-.full-width-layout .btn-primary a{
-    text-decoration: none;
-    color: var(--white-color);
-}
-.full-width-layout .btn-secondary a{
-    text-decoration: none;
-    color: var(--btn-color);
+    gap: var(--spacing-small);
 }
 
-.full-width-layout .btn-primary,
-.full-width-layout .btn-secondary {
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
+.full-width-layout .btn-primary a,
+.full-width-layout .btn-secondary a {
+    text-decoration: none;
+    display: block; /* Make the entire link clickable */
+    padding: var(--spacing-small) var(--spacing-normal); /* Consistent padding */
     border-radius: 5px;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
+.full-width-layout .btn-primary a {
+    color: var(--white-color);
+}
+
+.full-width-layout .btn-secondary a {
+    color: var(--btn-color);
+}
+
 .full-width-layout .btn-primary {
-    /* text-decoration: none; */
     background-color: var(--btn-color);
     border: 2px solid var(--btn-color);
-    /* color: var(--white-color); */
 }
 
 .full-width-layout .btn-secondary {
-    /* text-decoration: none; */
     background-color: var(--white-color);
     border: 2px solid var(--btn-color);
-    /* color: var(--btn-color); */
 }
 
-
+/* Content Wrapper (Right Side) */
 .full-width-layout .content-wrapper {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    padding: 2.5vw;
+    width: 50%;  /* Default width */
+    padding: var(--spacing-large);
 }
 
+/* Huge Title */
 .full-width-layout .huge-title {
     width: 100%;
-    font-size: clamp(3rem, 7vw, 10rem);
+    font-size: clamp(3rem, 6.5vw, 10rem); /* Scales, but has limits */
     text-align: center;
 }
 
 .full-width-layout .huge-title .row {
     display: block;
-    height: auto;
     width: 100%;
 }
 
@@ -141,12 +166,14 @@
     display: inline-block;
 }
 
+/* Tags */
 .full-width-layout .tags {
     width: 100%;
-    margin-top: 2rem;
+    margin-top: var(--spacing-large);
     overflow: hidden;
 }
 
+/* Marquee */
 .full-width-layout .marquee-wrapper {
     width: 100%;
     overflow: hidden;
@@ -156,7 +183,7 @@
 
 .full-width-layout .marquee {
     display: flex;
-    width: min-content; /* Allows content to extend beyond the container */
+    width: min-content;
     animation: marquee-scroll 12s linear infinite;
 }
 
@@ -171,7 +198,7 @@
 
 .full-width-layout .marquee-scroll {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing-small);
 }
 
 .full-width-layout .tag {
@@ -180,21 +207,53 @@
     white-space: nowrap;
 }
 
+/* Glassmorphism Style */
+.glassmorphism {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    -webkit-backdrop-filter: var(--glass-webkit-backdrop);
+    border-radius: 10px; /* Adjust as needed */
+    /* Optional: Add a subtle border */
+    /* border: 1px solid rgba(255, 255, 255, 0.18); */
+}
 
+/* Example usage of glassmorphism */
+.full-width-layout .intro-section {
+    /* If you want glassmorphism on the intro-section */
+    /* Remove background-color: var(--lt-color-gray-100);  from the intro-section  */
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     .full-width-layout .hero-container {
-        flex-direction: column;
+        flex-direction: column;  /* Stack vertically */
+         min-height: auto; 
+         margin-top: 5rem;
+    }
+
+    .full-width-layout .intro-section,
+    .full-width-layout .content-wrapper {
+        width: 100%; /* Each section takes full width */
+        padding: var(--spacing-normal); /* Adjust padding */
+
+        min-height: 50vh;
     }
 
     .full-width-layout .huge-title {
         font-size: clamp(2rem, 10vw, 5rem);
     }
 
-    .full-width-layout .huge-title .row {
-        height: auto;
+    .full-width-layout .tag {
+        margin: 0 var(--spacing-small);
     }
 
-    .full-width-layout .tag {
-        margin: 0 0.5rem;
+     .full-width-layout .cta-buttons {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        align-items: stretch; /* Make buttons full width */
+    }
+
+    .full-width-layout .btn-primary a,
+    .full-width-layout .btn-secondary a {
+        text-align: center; /* Center the text inside the button */
     }
 }

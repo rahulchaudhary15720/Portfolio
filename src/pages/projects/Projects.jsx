@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import './project.css'
 
-const TimelineProject = () => {
+const Projects = () => {
   const [expandedId, setExpandedId] = useState(null);
   const [isVisible, setIsVisible] = useState({});
 
@@ -26,7 +26,7 @@ const TimelineProject = () => {
         category: "Data Analytics",
         skills: ["Python", "Machine Learning", "Statistical Analysis", "Data Visualization"],
         progress: 100,
-        tools: ["Python", "Pandas", "Scikit-learn", "TensorFlow"],
+       
         certificationLink: "https://archive.nptel.ac.in/noc/B2C/candidate_login/main.php"
     },
     {
@@ -186,4 +186,4 @@ const TimelineProject = () => {
   );
 };
 
-export default TimelineProject;
+export default Projects;

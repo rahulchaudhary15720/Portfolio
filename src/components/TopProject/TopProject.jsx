@@ -1,64 +1,138 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import img from '../../assets/Images/CarRental.png'; // Replace with your actual car image path
+import { FiGithub, FiExternalLink, FiArrowRight } from "react-icons/fi";
+import img from '../../assets/Images/CarRental.png';
 import "./topProject.css";
 
 const TopProject = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const projectDetails = {
+    title: "Car Rental Platform",
+    description: "A modern car rental platform built with React and Node.js, featuring real-time availability, seamless booking process, and secure payment integration.",
+    liveLink: "https://car-rental-rust-mu.vercel.app/",
+    githubLink: "https://github.com/yourusername/car-rental",
+    features: [
+      {
+        title: "Smart Booking System",
+        description: "Intuitive booking interface with real-time availability"
+      },
+      {
+        title: "Secure Payments",
+        description: "Integrated payment gateway with multiple payment options"
+      },
+      {
+        title: "Location Services",
+        description: "GPS-enabled pickup and drop-off location selection"
+      },
+      {
+        title: "24/7 Support",
+        description: "Round-the-clock customer service with live chat"
+      }
+    ],
+    technologies: ["React", "Node.js", "MongoDB", "Express", "Stripe", "AWS"]
+  };
+
   return (
     <motion.div 
-      className="car-details-container"
+      className="project-container"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      transition={{ duration: 0.8 }}
     >
+      <div className="project-content">
+        <div className="project-header">
+          <motion.h2 
+            className="project-title"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {projectDetails.title}
+          </motion.h2>
+          <div className="project-links">
+            <a href={projectDetails.githubLink} target="_blank" rel="noopener noreferrer" className="icon-link">
+              <FiGithub size={24} />
+            </a>
+            <a href={projectDetails.liveLink} target="_blank" rel="noopener noreferrer" className="icon-link">
+              <FiExternalLink size={24} />
+            </a>
+          </div>
+        </div>
+
+        <motion.p 
+          className="project-description"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {projectDetails.description}
+        </motion.p>
+
+        <div className="project-features">
+          {projectDetails.features.map((feature, index) => (
+            <motion.div 
+              key={index}
+              className="feature-card"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + (index * 0.1) }}
+            >
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div 
+          className="tech-stack"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          <h3>Technologies Used</h3>
+          <div className="tech-tags">
+            {projectDetails.technologies.map((tech, index) => (
+              <span key={index} className="tech-tag">{tech}</span>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
       <div 
-        className="car-image"
+        className="project-image-container"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.img 
-          src={img} 
-          alt="Car" 
-          initial={{ scale: 0.95 }}
-          whileHover={{ scale: 1.03 }}
-          transition={{ duration: 0.3 }}
-          className={isHovered ? "blurred" : ""}
-        />
-        {isHovered && (
-          <motion.a 
-            href="https://car-rental-rust-mu.vercel.app/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="car-link"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.3 }}
-          >
-            Visit Now →
-          </motion.a>
-        )}
-      </div>
-
-      <div className="car-info">
-        <h3>2025 Luxury Sedan</h3>
-        <p>
-          This luxury sedan combines elegance, comfort, and advanced technology. 
-          It's perfect for both city drives and long-distance journeys, offering 
-          smooth handling and top-notch features. Equipped with a premium sound system, 
-          intuitive navigation, and an eco-friendly engine, it's the perfect choice for those 
-          who value both style and efficiency.
-        </p>
-
-        <ul>
-          <li><strong>Availability:</strong> Available for daily, weekly, and monthly rentals</li>
-          <li><strong>Booking Process:</strong> Easy online booking with instant confirmation</li>
-          <li><strong>Free Delivery:</strong> Free delivery within 20 miles of the city center</li>
-          <li><strong>Insurance:</strong> Comprehensive insurance coverage included</li>
-          <li><strong>Customer Support:</strong> 24/7 customer support for any queries</li>
-          <li><strong>Pick-Up/Drop-Off:</strong> Convenient pick-up and drop-off at locations of your choice</li>
-        </ul>
+        <motion.div 
+          className="image-wrapper"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <img 
+            src={img} 
+            alt="Car Rental Platform" 
+            className={`project-image ${isHovered ? 'hovered' : ''}`}
+          />
+          {isHovered && (
+            <motion.div 
+              className="image-overlay"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <a 
+                href={projectDetails.liveLink} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="view-project-btn"
+              >
+                View Live Project <FiArrowRight className="arrow-icon" />
+              </a>
+            </motion.div>
+          )}
+        </motion.div>
       </div>
     </motion.div>
   );
