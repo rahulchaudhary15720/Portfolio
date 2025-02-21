@@ -49,8 +49,9 @@ const Home = () => {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ 
                         delay: index * 0.1, 
-                        type: "spring", 
-                        stiffness: 100 
+                        type: "linear", 
+                        stiffness: 200 ,
+                        damping: 12 
                       }}
                     >
                       {letter}
@@ -88,7 +89,8 @@ const Home = () => {
                       transition={{ 
                         delay: index * 0.1 + 0.8, 
                         type: "spring", 
-                        stiffness: 100 
+                        stiffness: 200 ,
+                        dumping: 12
                       }}
                     >
                       {letter}
