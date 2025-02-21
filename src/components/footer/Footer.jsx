@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   GithubIcon,
   LinkedinIcon,
@@ -50,10 +51,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <nav className="footer-nav">
-            <a href="/projects">Projects</a>
-            <a href="/experience">Experience</a>
-            <a href="/technologies">Skills</a>
-            <a href="/contact">Contact</a>
+          <Link to="/projects">Projects</Link>
+  <Link to="/experience">Experience</Link>
+  <Link to="/technologies">Skills</Link>
+  <Link to="/contact">Contact</Link>
           </nav>
         </div>
 
