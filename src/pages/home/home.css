@@ -228,19 +228,18 @@
     .full-width-layout .hero-container {
         flex-direction: column;  /* Stack vertically */
          min-height: auto; 
-         margin-top: 5rem;
+         margin-top: 2.5rem;
     }
 
     .full-width-layout .intro-section,
     .full-width-layout .content-wrapper {
         width: 100%; /* Each section takes full width */
         padding: var(--spacing-normal); /* Adjust padding */
-
         min-height: 50vh;
     }
 
     .full-width-layout .huge-title {
-        font-size: clamp(2rem, 10vw, 5rem);
+        font-size: clamp(2rem, 7vw, 5rem);
     }
 
     .full-width-layout .tag {

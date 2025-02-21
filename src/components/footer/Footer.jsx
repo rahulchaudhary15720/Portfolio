@@ -50,10 +50,10 @@ const Footer = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <nav className="footer-nav">
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+            <a href="/projects">Projects</a>
+            <a href="/experience">Experience</a>
+            <a href="/technologies">Skills</a>
+            <a href="/contact">Contact</a>
           </nav>
         </div>
 
